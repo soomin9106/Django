@@ -1,4 +1,5 @@
 from django.contrib.auth.models import User
+from django.http.response import HttpResponseForbidden, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponse
@@ -10,10 +11,15 @@ from accountapp.forms import AccountUpdateForm
 
 # Create your views here.
 
+#soomin fndldishfwk99
 def hello_world(request):
-    return render(request,'accountapp/hello_world.html')
 
-#test321 4k4HszkCqJJnWq8
+    if request.user.is_authenticated:
+        return render(request,'accountapp/hello_world.html')
+    else:
+        return HttpResponseRedirect(reverse('accountapp:login'))    
+
+
 class AccountCreateView(CreateView):
     model = User
     form_class = UserCreationForm
@@ -32,10 +38,32 @@ class AccountUpdateView(UpdateView):
     success_url = reverse_lazy('accountapp:hello_world') #class 에서 reverse 를 사용하면 에러가 난다.
     template_name = 'accountapp/update.html'
 
+    def get(self, *args, **kwargs):
+        if self.request.user.is_authenticated and self.get_object()==self.request.user:
+            return super().get(*args, **kwargs)
+        else:
+            return HttpResponseForbidden()
+    def post(self, *args, **kwargs):
+        if self.request.user.is_authenticated and self.get_object()==self.request.user:
+            return super().get(*args, **kwargs)
+        else:
+            return HttpResponseForbidden()
+
 class AccountDeleteView(DeleteView):
     model = User
     success_url = reverse_lazy('accountapp:login')
     template_name = 'accountapp/delete.html'
+
+    def get(self, *args, **kwargs):
+        if self.request.user.is_authenticated and self.get_object()==self.request.user:
+            return super().get(*args, **kwargs)
+        else:
+            return HttpResponseForbidden()
+    def post(self, *args, **kwargs):
+        if self.request.user.is_authenticated and self.get_object()==self.request.user:
+            return super().get(*args, **kwargs)
+        else:
+            return HttpResponseForbidden()
 
 
 
