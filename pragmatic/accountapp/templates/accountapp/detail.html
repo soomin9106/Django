@@ -2,7 +2,10 @@
     <div>
         <p>{{target_user.date_joined}}</p>
         {% if target_user.profile %}
+        <img src="{{target_user.profile.image.url}}" style="height: 12rem; width: 12rem; border-radius: 10rem;"/>
         <h2>{{target_user.profile.nickname}}</h2>
+        <h6>{{target_user.profile.message}}</h6>
+        <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}">Update Profile</a>
         {% else %}
         <a href="{% url 'profileapp:create' %}">Create Profile</a>
         {% endif %}
