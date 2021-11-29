@@ -5,6 +5,9 @@
 
    <p>{{ target_article.content }}</p>
 
+   {% if target_article.writer == user %}
    <a href="{% url 'articleapp:update' pk=target_article.pk %}">Update Article</a>
    <a href="{% url 'articleapp:delete' pk=target_article.pk %}">Delete Article</a>
+   {% endif %}
+   <a href="{% url 'articleapp:list' %}">Go to List</a>
 </div>

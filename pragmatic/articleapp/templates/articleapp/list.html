@@ -16,6 +16,7 @@
 
 .container img{
     width: 100%;
+    border-radius: 1rem;
 }
 
 
@@ -27,46 +28,16 @@
 </div>
 
 <div class="container">
-    <div>
-      <img src="https://picsum.photos/200/300">
-    </div>
-    <div>
-      <img src="https://picsum.photos/200/340">
-    </div>
-    <div>
-      <img src="https://picsum.photos/200/280">
-    </div>
-    <div>
-      <img src="https://picsum.photos/200/390">
-    </div>
-    <div>
-      <img src="https://picsum.photos/200/200">
-    </div>
-    <div>
-      <img src="https://picsum.photos/200/500">
-    </div>
-    <div>
-      <img src="https://picsum.photos/200/100">
-    </div>
-    <div>
-      <img src="https://picsum.photos/200/250">
-    </div>
-    <div>
-      <img src="https://picsum.photos/200/320">
-    </div>
-    <div>
-      <img src="https://picsum.photos/200/300">
-    </div>
-    <div>
-      <img src="https://picsum.photos/200/300">
-    </div>
-    <div>
-      <img src="https://picsum.photos/200/270">
-    </div>
-    <div>
-      <img src="https://picsum.photos/200/330">
-    </div>
+  {% if article_list %}
+  {% for article in article_list %}
+  <a href="{% url 'articleapp:detail' pk=article.pk %}">
+    {% include 'snippets/card.html' with article=article %}
+  </a>
+  {% endfor %}
+  {% else %}
+  <div><h1>No Articles YET!</h1></div>
+  {% endif %}
 
-  </div>
+</div>
 
   
