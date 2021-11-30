@@ -7,6 +7,15 @@
          {{target_project.description}}
       </p>
    </div>
+   <div>
+      {% if user.is_authenticated %}
+         {% if not subscription %}
+         <a href="{% url 'subscribeapp:subscribe' %}?project_pk={{ target_project.pk }}">Subscribe</a>
+         {% else %}
+         <a href="{% url 'subscribeapp:subscribe' %}?project_pk={{ target_project.pk }}">Unsubscribe</a>
+         {% endif %}
+      {% endif %}
+   </div>
 </div>
 <div>
    {% include 'snippets/list_fragment.html' with article_list=object_list %}
