@@ -1,0 +1,8 @@
+<div>
+    <h4>Project Create</h4>
+    <form action="{% url 'projectapp:create' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" class="btn btn-primary"/>
+    </form>
+</div>

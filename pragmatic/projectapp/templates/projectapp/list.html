@@ -1,0 +1,45 @@
+{% load static %}
+<head>
+    <script src="{% static 'js/magicgrid.js' %}" defer></script>
+</head>
+<style>
+
+
+.container div {
+  width: 250px;
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+}
+
+.container img{
+    width: 7rem;
+    height: 7rem;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+
+
+</style>
+
+<div>
+    <a href="{% url 'projectapp:create' %}" class="btn btn-dark">Create Project</a>
+</div>
+
+<div class="container">
+  {% if project_list %}
+  {% for project in project_list %}
+  <a href="{% url 'projectapp:detail' pk=project.pk %}">
+    {% include 'snippets/card_project.html' with project=project %}
+  </a>
+  {% endfor %}
+  {% else %}
+  <div><h1>No Projects YET!</h1></div>
+  {% endif %}
+
+</div>
+
+  
