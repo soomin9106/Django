@@ -32,7 +32,7 @@ class ArticleCreateView(CreateView):
         temp_article.save()
         return super().form_valid(form)
 
-
+#comment form injection using FormMixIn
 class ArticleDetailView(DetailView,FormMixin):
     model = Article
     form_class = CommentCreationForm
