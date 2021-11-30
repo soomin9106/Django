@@ -1,0 +1,15 @@
+<div>
+    <h1>Comment Create</h1>
+    <form action="{% url 'commentapp:create' %}" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <input type="hidden" name="article_pk" value="{{ article.pk }}" />
+
+
+        {% if user.is_authenticated %}
+        <input type="submit" class="btn btn-primary"/>
+        {% else %}
+        <a href="{% url 'accountapp:login' %}">Login to give comment!</a>
+        {% endif %}
+    </form>
+</div>

@@ -7,10 +7,11 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, UpdateView, ListView
 from django.views.generic.detail import DetailView
-from django.views.generic.edit import DeleteView
+from django.views.generic.edit import DeleteView, FormMixin
 from articleapp.forms import ArticleCreationForm
 from articleapp.decorators import article_ownership_required
 from articleapp.models import Article
+from commentapp.forms import CommentCreationForm
 
 has_ownership = [article_ownership_required, login_required]
 
@@ -32,8 +33,9 @@ class ArticleCreateView(CreateView):
         return super().form_valid(form)
 
 
-class ArticleDetailView(DetailView):
+class ArticleDetailView(DetailView,FormMixin):
     model = Article
+    form_class = CommentCreationForm
     context_object_name = 'target_article'
     template_name = 'articleapp/detail.html'
 
