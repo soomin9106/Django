@@ -173,3 +173,6 @@ optimind/wsgi/*
 
 #environment settings
 .env
+
+#aws
+aws_pragmatic_key.pem
