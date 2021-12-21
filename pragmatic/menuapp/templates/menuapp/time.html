@@ -2,11 +2,9 @@
     <div class="select-days">
         <div class="select-days-day">
             <label>조회 일자</label>
-            <input type="radio" name="view_days" value="accumulate" /> <label>누적</label>
-            <input type="radio" name="view_days" value="period" /> <label>기간별</label>
         </div>
         <div class="select-days-date">
-            <input type="date" name="day_1" /> ~ <input type="date" name="day_2" />
+            <input type="date" name="day" /> 
         </div>
     </div>
 
@@ -57,7 +55,7 @@
         </div>
         <div class="target">
             <label>지표</label>
-            <select name="targets[]" style="width: 220px;" id="target-select" class="form-control" multiple="multiple">
+            <select name="targets[]" style="width: 220px;" id="target-select" class="form-control">
                 <option>option1</option>
                 <option>option2</option>
                 <option>option3</option>

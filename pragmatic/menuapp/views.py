@@ -4,3 +4,6 @@ from django.shortcuts import render
 
 def first(request):
     return render(request, 'menuapp/menu.html')
+
+def add(request):
+    return render(request, 'menuapp/add.html')

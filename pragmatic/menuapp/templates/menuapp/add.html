@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+    {% include 'menuapp/head.html' %}
+
+    {% include 'menuapp/header.html' %}
+
+
+    <form method="POST" class="add-form">
+        <input class="add-submit" type="submit" value="저장" />
+       <table class="add-table" border="1">
+           <tr>
+               <th>아티스트명</th>
+               <td><input class="add-target-input"  type="text" placeholder="아티스트명" /></td>
+           </tr>
+           <tr>
+                <th>유튜브</th>
+                <td><input class="add-target-input"  type="text" placeholder="URL" /></td>
+            </tr>
+            <tr>
+                <th>V Live</th>
+                <td><input class="add-target-input"  type="text" placeholder="URL" /></td>
+            </tr>
+            <tr>
+                <th rowspan="2">멜론</th>
+                <td><input class="add-target-input"  type="text" placeholder="URL 1" /></td>
+            </tr>
+            <tr>
+                <td><input class="add-target-input"  type="text" placeholder="URL 2" /></td>
+            </tr>
+            <tr>
+                <th rowspan="2">스포티파이</th>
+                <td><input class="add-target-input" type="text" placeholder="URL 1" /></td>
+            </tr>
+            <tr>
+                <td><input class="add-target-input" type="text" placeholder="URL 2" /></td>
+            </tr>
+            <tr>
+                <th rowspan="2">인스타그램</th>
+                <td><input class="add-target-input" type="text" placeholder="URL" /></td>
+            </tr>
+            <tr>
+                <td><input class="add-target-input" type="text" placeholder="계정" /></td>
+            </tr>
+            <tr>
+                <th rowspan="2">페이스북</th>
+                <td><input class="add-target-input" type="text" placeholder="URL" /></td>
+            </tr>
+            <tr>
+                <td><input class="add-target-input" type="text" placeholder="계정" /></td>
+            </tr>
+            <tr>
+                <th rowspan="2">트위터1</th>
+                <td><input class="add-target-input" type="text" placeholder="URL" /></td>
+            </tr>
+            <tr>
+                <td><input class="add-target-input" type="text" placeholder="계정" /></td>
+            </tr>
+            <tr>
+                <th rowspan="2">트위터2</th>
+                <td><input class="add-target-input" type="text" placeholder="URL" /></td>
+            </tr>
+            <tr>
+                <td><input class="add-target-input" type="text" placeholder="계정" /></td>
+            </tr>
+            <tr>
+                <th rowspan="2">틱톡</th>
+                <td><input class="add-target-input" type="text" placeholder="URL" /></td>
+            </tr>
+            <tr>
+                <td><input class="add-target-input" type="text" placeholder="계정" /></td>
+            </tr>
+            <tr>
+                <th>위버스</th>
+                <td><input class="add-target-input" type="text" placeholder="URL" /></td>
+            </tr>
+       </table>
+    </form>
+
+</html>
