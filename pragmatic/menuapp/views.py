@@ -7,3 +7,6 @@ def first(request):
 
 def add(request):
     return render(request, 'menuapp/add.html')
+
+def artist(request):
+    return render(request, 'menuapp/artist.html')
