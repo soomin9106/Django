@@ -156,7 +156,7 @@ cython_debug/
 !**/migrations/__init__.py
 
 # collected static resources
-static/
+
 
 # optimind-front
 react-app/
